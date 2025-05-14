@@ -20,8 +20,10 @@ function AuthLayout({ children }: { children: React.ReactNode }) {
           <span className="text-sm font-medium">Saúde Facil</span>
         </div>
       </div>
-      <div className="flex h-screen flex-1 items-center justify-center overflow-y-auto py-20">
-        {children}
+      <div className="flex h-screen w-full flex-1 items-center overflow-y-auto">
+        <div className="mx-auto my-auto w-full max-w-[440px] py-20">
+          {children}
+        </div>
       </div>
     </main>
   )
