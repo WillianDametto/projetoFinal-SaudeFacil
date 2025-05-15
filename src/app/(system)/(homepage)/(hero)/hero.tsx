@@ -8,7 +8,7 @@ import { SelectState } from './select-state'
 
 function Hero() {
   return (
-    <div className="bg-primary h-[70vh] md:h-[50vh]">
+    <div className="bg-primary h-full md:h-[50vh]">
       <div className="c-container relative flex h-full flex-col-reverse items-end justify-between gap-10 md:flex-row">
         <Card className="mb-10 ml-0 w-full md:w-[60%]">
           <CardHeader>
