@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+import { SheetClose } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
 import { ActionButtons } from './action-buttons'
@@ -57,13 +58,14 @@ function MobileNavMenu() {
     <div className="flex h-full flex-col justify-between">
       <nav className="flex flex-col gap-2">
         {navMenuItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="text-primary-foreground hover:bg-primary-foreground/10 rounded-md px-4 py-3 text-sm font-semibold transition-colors"
-          >
-            {item.label}
-          </Link>
+          <SheetClose asChild key={item.href}>
+            <Link
+              href={item.href}
+              className="text-primary-foreground hover:bg-primary-foreground/10 rounded-md px-4 py-3 text-sm font-semibold transition-colors"
+            >
+              {item.label}
+            </Link>
+          </SheetClose>
         ))}
       </nav>
       <div className="mx-4 mt-auto">
