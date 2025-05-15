@@ -1,3 +1,7 @@
+import Link from 'next/link'
+
+import { Button } from '@/components/ui/button'
+
 import { AppointmentCard } from './appointment-card'
 
 const fakeAppointments = [
@@ -96,7 +100,14 @@ const fakeAppointments = [
 export default function Agendamentos() {
   return (
     <div className="c-container py-16">
-      <h1 className="text-2xl font-medium">Agendamentos Marcados</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-medium">Agendamentos Marcados</h1>
+        <Button className="px-0" variant="outline">
+          <Link className="w-full px-4" href="/agendamentos/relatorio">
+            Ver relatorio de agendamentos
+          </Link>
+        </Button>
+      </div>
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {fakeAppointments.map((appointment, index) => (
           <AppointmentCard key={index} {...appointment} />
