@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -39,8 +40,10 @@ function ConsultationCard({
         <span className="mb-1 text-sm">{type}</span>
         <span className="mb-1 text-sm">{location}</span>
 
-        <Button className="mt-6" size="sm" variant="default">
-          Conversar
+        <Button className="mt-6 px-0" size="sm" variant="default">
+          <Link className="w-full" href="/consultas/chat">
+            Conversar
+          </Link>
         </Button>
       </CardContent>
     </Card>
