@@ -1,47 +1,49 @@
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 
 export function LoginForm() {
   return (
-    <form className="flex flex-col gap-6">
-      <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-2xl font-bold">Faça login na sua conta</h1>
-        <p className="text-muted-foreground text-sm text-balance">
-          Entre com seu email abaixo para acessar sua conta
-        </p>
-      </div>
-      <div className="grid gap-6">
-        <div className="grid gap-2">
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="email@example.com"
-            required
-          />
-        </div>
-        <div className="grid gap-2">
-          <Label htmlFor="password">Senha</Label>
-          <Input
-            id="password"
-            placeholder="********"
-            type="password"
-            required
-          />
-        </div>
-        <Button type="submit" className="w-full">
-          Login
+    <Card className="flex w-[80vw] max-w-xl flex-col items-center rounded-2xl p-8 shadow-lg">
+      <h1 className="mb-8 text-xl font-semibold">Faça o login</h1>
+      <form className="flex w-full flex-col gap-4">
+        <Input
+          id="email"
+          type="email"
+          placeholder="E-mail"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        <Input
+          id="password"
+          type="password"
+          placeholder="Senha"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        <Button
+          type="submit"
+          className="mt-2 w-full rounded-full text-base font-semibold"
+        >
+          Entrar
         </Button>
-      </div>
-      <div className="text-center text-sm">
-        Não tem uma conta?{' '}
-        <Link href="/auth/cadastrar" className="underline underline-offset-4">
-          Crie uma conta
+      </form>
+      <div className="mt-4 flex items-center justify-center gap-2">
+        <Link
+          href="/auth/esqueci-a-senha"
+          className="text-xs text-black/70 hover:underline"
+        >
+          Esqueceu sua senha?
+        </Link>
+        <Link
+          href="/auth/cadastrar"
+          className="text-xs text-black/70 hover:underline"
+        >
+          Criar conta
         </Link>
       </div>
-    </form>
+    </Card>
   )
 }

@@ -1,27 +1,43 @@
-import Image from 'next/image'
+'use client'
 
-function AuthLayout({ children }: { children: React.ReactNode }) {
+import { ArrowLeft } from 'lucide-react'
+import Image from 'next/image'
+import { usePathname, useRouter } from 'next/navigation'
+
+import { Button } from '@/components/ui/button'
+
+export default function AuthLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleBack = () => {
+    router.back()
+  }
+
   return (
-    <main className="grid h-screen w-screen grid-cols-2">
-      <div className="bg-muted relative flex flex-1 flex-col items-center justify-between p-6">
-        <div className="inset-0 m-auto flex flex-col items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt="Saúde Facil"
-            width={200}
-            height={200}
-            className="h-20 w-20"
-          />
-          <span className="text-sm font-medium">Saúde Facil</span>
+    <main className="bg-primary relative flex h-screen w-screen items-center justify-center">
+      {pathname !== '/auth/login' && (
+        <Button
+          onClick={handleBack}
+          variant="secondary"
+          className="absolute top-4 left-4"
+          aria-label="Voltar"
+        >
+          <ArrowLeft />
+          Voltar
+        </Button>
+      )}
+      {pathname === '/auth/login' && (
+        <div className="absolute top-20 right-[50%] flex translate-x-[50%] flex-col items-center gap-2">
+          <Image src="/logo.png" alt="Logo" width={100} height={100} />
+          <p className="text-2xl font-bold text-white">Saúde Fácil</p>
         </div>
-      </div>
-      <div className="flex h-screen w-full flex-1 items-center overflow-y-auto">
-        <div className="mx-auto my-auto w-full max-w-[440px] py-20">
-          {children}
-        </div>
-      </div>
+      )}
+      {children}
     </main>
   )
 }
-
-export default AuthLayout
