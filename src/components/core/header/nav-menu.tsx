@@ -26,8 +26,8 @@ const navMenuItems = [
     href: '/medicos',
   },
   {
-    label: 'Prontuário',
-    href: '/prontuario',
+    label: 'Sobre',
+    href: '/sobre',
   },
 ]
 

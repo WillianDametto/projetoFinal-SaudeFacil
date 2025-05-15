@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 
-export const Confirmacao = () => {
+export default function Confirmacao() {
   const router = useRouter()
 
   return (
@@ -109,5 +109,3 @@ export const Confirmacao = () => {
     </div>
   )
 }
-
-export default Confirmacao

@@ -19,15 +19,15 @@ function ProfileDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem>
-          <Link className="flex items-center gap-2" href="/suporte">
-            <MessageCircleQuestion />
-            Suporte
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
           <Link className="flex items-center gap-2" href="/dados-da-conta">
             <User />
             Dados da conta
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link className="flex items-center gap-2" href="/suporte">
+            <MessageCircleQuestion />
+            Suporte
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
