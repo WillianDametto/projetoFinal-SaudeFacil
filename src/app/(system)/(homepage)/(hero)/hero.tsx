@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -20,7 +21,9 @@ function Hero() {
             <div className="flex flex-col gap-4 md:flex-row">
               <SelectSpecialist />
               <SelectState />
-              <Button variant="secondary">Agendar</Button>
+              <Button variant="secondary">
+                <Link href="/medicos">Agendar</Link>
+              </Button>
             </div>
           </CardContent>
         </Card>

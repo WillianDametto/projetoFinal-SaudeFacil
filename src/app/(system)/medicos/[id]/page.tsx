@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -50,10 +51,12 @@ export default function DoctorPage() {
           </div>
           <div className="flex-shrink-0">
             <Button
-              className="w-full bg-cyan-400 text-white hover:bg-cyan-500 md:w-auto"
+              className="w-full bg-cyan-400 px-0 text-white hover:bg-cyan-500 md:w-auto"
               style={{ minWidth: 120 }}
             >
-              Agendamento
+              <Link className="w-full" href="/medicos/1/agendar">
+                Agendamento
+              </Link>
             </Button>
           </div>
         </CardHeader>
