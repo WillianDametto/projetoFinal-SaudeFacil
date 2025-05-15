@@ -20,14 +20,14 @@ function AppointmentCard({
   insurance,
 }: AppointmentCardProps) {
   return (
-    <Card className="mx-auto flex w-full flex-row items-center gap-6 bg-white px-8 py-6">
+    <Card className="mx-auto flex w-full flex-col items-start gap-6 bg-white px-8 py-6 md:flex-row md:items-center">
       <div className="flex-shrink-0">
         <Image
           src={'/pacient.jpg'}
           alt={patientName}
           width={80}
           height={80}
-          className="bg-muted rounded-xl object-cover"
+          className="bg-muted h-10 w-10 rounded-xl object-cover md:h-20 md:w-20"
         />
       </div>
       <CardContent className="flex flex-col justify-center p-0">
