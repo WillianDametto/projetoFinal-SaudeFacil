@@ -22,8 +22,8 @@ const navMenuItems = [
     href: '/consultas',
   },
   {
-    label: 'Exames',
-    href: '/exames',
+    label: 'Médicos',
+    href: '/medicos',
   },
   {
     label: 'Prontuário',
