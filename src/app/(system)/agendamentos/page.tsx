@@ -100,7 +100,7 @@ const fakeAppointments = [
 export default function Agendamentos() {
   return (
     <div className="c-container py-16">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
         <h1 className="text-2xl font-medium">Agendamentos Marcados</h1>
         <Button className="px-0" variant="outline">
           <Link className="w-full px-4" href="/agendamentos/relatorio">

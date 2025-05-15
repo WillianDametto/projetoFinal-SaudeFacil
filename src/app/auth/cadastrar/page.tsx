@@ -1,8 +1,6 @@
-import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 
 export default function Register() {
@@ -39,15 +37,6 @@ export default function Register() {
           </Card>
         </Link>
       </section>
-
-      <Link
-        href="/auth/login"
-        className="fixed top-4 left-4 sm:top-10 sm:left-10"
-      >
-        <Button variant="secondary" size="sm" className="sm:text-base">
-          <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" /> Voltar
-        </Button>
-      </Link>
     </main>
   )
 }

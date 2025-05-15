@@ -32,7 +32,7 @@ export default function AuthLayout({
         </Button>
       )}
       {pathname === '/auth/login' && (
-        <div className="absolute top-20 right-[50%] flex translate-x-[50%] flex-col items-center gap-2">
+        <div className="absolute top-10 right-[50%] flex translate-x-[50%] flex-col items-center gap-2">
           <Image src="/logo.png" alt="Logo" width={100} height={100} />
           <p className="text-2xl font-bold text-white">Saúde Fácil</p>
         </div>
