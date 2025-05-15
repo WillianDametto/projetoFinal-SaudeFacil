@@ -1,14 +1,9 @@
 import Image from 'next/image'
 
-import { ThemeToggle } from '@/components/ui/theme-toggle'
-
 function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="grid h-screen w-screen grid-cols-2">
       <div className="bg-muted relative flex flex-1 flex-col items-center justify-between p-6">
-        <div className="absolute top-6 left-6">
-          <ThemeToggle />
-        </div>
         <div className="inset-0 m-auto flex flex-col items-center gap-2">
           <Image
             src="/logo.png"
