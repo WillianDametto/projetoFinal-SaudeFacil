@@ -90,7 +90,7 @@ export default function Confirmacao() {
                 className="w-full bg-cyan-400 text-white hover:bg-cyan-500"
                 onClick={() => {
                   // TODO: Handle confirmation
-                  router.push('/medicos')
+                  router.push('/medicos/1/agendar/confirmacao/pagamento')
                 }}
               >
                 Confirmar Agendamento
