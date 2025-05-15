@@ -10,7 +10,7 @@ import {
 import { SheetClose } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
-import { ActionButtons } from './action-buttons'
+import { ProfileDropdown } from './profile-dropdown'
 
 const navMenuItems = [
   {
@@ -69,7 +69,7 @@ function MobileNavMenu() {
         ))}
       </nav>
       <div className="mx-4 mt-auto">
-        <ActionButtons />
+        <ProfileDropdown />
       </div>
     </div>
   )

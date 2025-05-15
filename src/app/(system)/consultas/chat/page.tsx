@@ -51,7 +51,7 @@ export default function Chat() {
   }
 
   return (
-    <div className="bg-background flex w-full flex-col items-center pt-8">
+    <div className="bg-background flex w-full flex-col items-center py-16">
       <div className="mb-1 text-lg font-bold sm:text-2xl">Chat</div>
       <div className="c-container text-muted-foreground mb-4 text-center text-xs sm:text-base">
         Nessa tela você poderá ter contato direto com o médico para tirar

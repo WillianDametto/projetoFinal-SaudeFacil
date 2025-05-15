@@ -13,8 +13,8 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 
-import { ActionButtons } from './action-buttons'
 import { MobileNavMenu, NavMenu } from './nav-menu'
+import { ProfileDropdown } from './profile-dropdown'
 
 function Header() {
   return (
@@ -36,7 +36,7 @@ function Header() {
 
         {/* Desktop User/Auth Buttons */}
         <div className="hidden md:block">
-          <ActionButtons />
+          <ProfileDropdown />
         </div>
 
         {/* Mobile Navigation */}
