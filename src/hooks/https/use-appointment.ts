@@ -6,7 +6,7 @@ import { queryClient } from '@/lib/query'
 
 interface Appointment {
   id: number
-  pacienteId: number
+  pacientId: number
   medicoId: number
   dataHora: string
   status: string

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.saude.facil.demo.service.AgendamentoServiceTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.138 s -- in com.saude.facil.demo.service.AgendamentoServiceTest
