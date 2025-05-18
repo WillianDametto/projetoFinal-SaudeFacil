@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function OptionCard() {
   return (
-    <Link href="/medicos">
+    <Link href="/sobre">
       <div className="bg-primary flex aspect-video h-auto w-full flex-col items-center justify-center rounded-2xl shadow-md">
         <Image
           src="/logo.png"
