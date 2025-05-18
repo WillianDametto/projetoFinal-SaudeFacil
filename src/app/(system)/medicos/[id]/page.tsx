@@ -1,10 +1,26 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useDoctor } from '@/hooks/https/use-doctor'
 
 export default function DoctorPage() {
+  const { id } = useParams<{ id: string }>()
+
+  const { data: doctor, isLoading } = useDoctor(Number(id))
+
+  if (isLoading) {
+    return <div>Carregando...</div>
+  }
+
+  if (!doctor) {
+    return <div>Médico não encontrado</div>
+  }
+
   return (
     <div className="c-container flex flex-col items-center justify-center py-8 md:py-16">
       <Card className="w-full">
@@ -19,33 +35,27 @@ export default function DoctorPage() {
             />
           </div>
           <div className="flex-1">
-            <CardTitle>Dr. Carlos - Fisioterapeuta</CardTitle>
+            <CardTitle>
+              {doctor.nome} - {doctor.especialidade}
+            </CardTitle>
             <ul className="text-muted-foreground mt-1 space-y-1 text-sm">
               <li>
-                <span className="text-foreground font-medium">
-                  Localização:
-                </span>{' '}
-                São Caetano do Sul - São Paulo
+                <span className="text-foreground font-medium">CRM:</span>{' '}
+                {doctor.crm}
+              </li>
+              <li>
+                <span className="text-foreground font-medium">Email:</span>{' '}
+                {doctor.email}
+              </li>
+              <li>
+                <span className="text-foreground font-medium">Telefone:</span>{' '}
+                {doctor.telefone}
               </li>
               <li>
                 <span className="text-foreground font-medium">
-                  Experiência:
+                  Data de Nascimento:
                 </span>{' '}
-                15 anos
-              </li>
-              <li>
-                <span className="text-foreground font-medium">
-                  Atendimento:
-                </span>{' '}
-                Domiciliar ou Consultório
-              </li>
-              <li>
-                <span className="text-foreground font-medium">Contato:</span>{' '}
-                xxxx-xxxx
-              </li>
-              <li>
-                <span className="text-foreground font-medium">Horários:</span>{' '}
-                7:00 - 14:00
+                {doctor.dataNascimento}
               </li>
             </ul>
           </div>
@@ -54,7 +64,7 @@ export default function DoctorPage() {
               className="w-full bg-cyan-400 px-0 text-white hover:bg-cyan-500 md:w-auto"
               style={{ minWidth: 120 }}
             >
-              <Link className="w-full" href="/medicos/1/agendar">
+              <Link className="w-full" href={`/medicos/${id}/agendar`}>
                 Agendamento
               </Link>
             </Button>

@@ -3,6 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 
+import QueryProvider from '@/providers/query-provider'
+
 const roboto = Roboto({
   variable: '--font-roboto',
   subsets: ['latin'],
@@ -20,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <body className={`${roboto.className} antialiased`}>
+        <QueryProvider>{children}</QueryProvider>
+      </body>
     </html>
   )
 }

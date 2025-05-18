@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -21,6 +22,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 
 export default function Pagamento() {
+  const router = useRouter()
   return (
     <div className="c-container flex flex-col items-center justify-center py-8 md:py-16">
       <Card className="w-full">
@@ -67,7 +69,10 @@ export default function Pagamento() {
           {/* Payment Form */}
           <form
             className="flex flex-1 flex-col justify-center gap-4"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault()
+              router.push('/consultas')
+            }}
           >
             <div className="flex flex-col gap-2">
               <Label htmlFor="titular" className="text-sm">

@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -6,8 +8,12 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { useCreatePatientForm } from '@/hooks/form/use-create-patient-form'
 
 export default function PacienteForm() {
+  const { register, handleSubmit, errors, isSubmitting, onSubmit } =
+    useCreatePatientForm()
+
   return (
     <Card className="w-[80vw] max-w-xl rounded-2xl p-8 shadow-lg">
       <CardHeader className="mb-4 pl-0">
@@ -18,47 +24,107 @@ export default function PacienteForm() {
           Preencha os campos abaixo para criar sua conta de paciente.
         </CardDescription>
       </CardHeader>
-      <form className="flex w-full flex-col gap-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex w-full flex-col gap-4"
+      >
         <Input
-          id="email"
+          {...register('email')}
           type="email"
           placeholder="E-mail"
           required
           className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
         />
+        {errors.email && (
+          <span className="text-sm text-red-500">{errors.email.message}</span>
+        )}
         <Input
-          id="confirm-email"
-          type="email"
-          placeholder="Confirmar e-mail"
-          required
-          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
-        />
-        <Input
-          id="password"
+          {...register('senha')}
           type="password"
           placeholder="Senha"
           required
           className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
         />
+        {errors.senha && (
+          <span className="text-sm text-red-500">{errors.senha.message}</span>
+        )}
         <Input
-          id="confirm-password"
-          type="password"
-          placeholder="Confirmar senha"
-          required
-          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
-        />
-        <Input
-          id="contact"
+          {...register('paciente.nomeCompleto')}
           type="text"
-          placeholder="Contato"
+          placeholder="Nome completo"
           required
           className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
         />
+        {errors.paciente?.nomeCompleto && (
+          <span className="text-sm text-red-500">
+            {errors.paciente.nomeCompleto.message}
+          </span>
+        )}
+        <Input
+          {...register('paciente.dataNascimento')}
+          type="date"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        {errors.paciente?.dataNascimento && (
+          <span className="text-sm text-red-500">
+            {errors.paciente.dataNascimento.message}
+          </span>
+        )}
+        <Input
+          {...register('paciente.cpf')}
+          type="text"
+          placeholder="CPF"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        {errors.paciente?.cpf && (
+          <span className="text-sm text-red-500">
+            {errors.paciente.cpf.message}
+          </span>
+        )}
+        <Input
+          {...register('paciente.genero')}
+          type="text"
+          placeholder="Gênero"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        {errors.paciente?.genero && (
+          <span className="text-sm text-red-500">
+            {errors.paciente.genero.message}
+          </span>
+        )}
+        <Input
+          {...register('paciente.estadoCivil')}
+          type="text"
+          placeholder="Estado civil"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        {errors.paciente?.estadoCivil && (
+          <span className="text-sm text-red-500">
+            {errors.paciente.estadoCivil.message}
+          </span>
+        )}
+        <Input
+          {...register('paciente.telefone')}
+          type="text"
+          placeholder="Telefone"
+          required
+          className="focus:ring-primary rounded-full border-none bg-gray-200 px-6 py-3 text-base focus:ring-2"
+        />
+        {errors.paciente?.telefone && (
+          <span className="text-sm text-red-500">
+            {errors.paciente.telefone.message}
+          </span>
+        )}
         <Button
           type="submit"
+          disabled={isSubmitting}
           className="mt-2 w-full rounded-full text-base font-semibold"
         >
-          Criar conta
+          {isSubmitting ? 'Criando conta...' : 'Criar conta'}
         </Button>
       </form>
     </Card>
