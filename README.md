@@ -1,8 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+Este é um projeto Next.js criado com create-next-app.
 
 ```bash
 npm run dev
@@ -14,23 +10,28 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Primeiros Passos- 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Primeiro, execute o servidor de desenvolvimento:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abra http://localhost:3000 no seu navegador para ver o resultado.
 
-## Learn More
+Você pode começar a editar a página modificando o arquivo app/page.tsx. A página será atualizada automaticamente conforme você edita o arquivo.
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto utiliza next/font para otimizar e carregar automaticamente a Geist, uma nova família de fontes da Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Saiba Mais -
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para saber mais sobre o Next.js, veja os seguintes recursos:
 
-## Deploy on Vercel
+Documentação do Next.js – aprenda sobre os recursos e a API do Next.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Aprenda Next.js – um tutorial interativo de Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Você também pode conferir o repositório do Next.js no GitHub – seu feedback e contribuições são bem-vindos!
+
+Implantação na Vercel- 
+
+A maneira mais fácil de implantar seu app Next.js é usando a plataforma Vercel, criada pelos desenvolvedores do Next.js.
+
+Consulte nossa documentação de implantação do Next.js para mais detalhes.
